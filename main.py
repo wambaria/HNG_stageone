@@ -19,8 +19,8 @@ async def root(
         "current_day": current_day,
         "utc_time": utc_time,
         "track": track,
-        "github_file_url":
-        "github_repo_url":
+        "github_file_url":https://github.com/wambaria/HNG_stageone/blob/main/main.py
+        "github_repo_url":https://github.com/wambaria/HNG_stageone
         "status_code": 200
     }
 
