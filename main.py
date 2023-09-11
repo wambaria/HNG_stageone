@@ -4,7 +4,7 @@ import pytz
 
 app = FastAPI()
 
-@app.get("/app")
+@app.get("")
 async def root(
     slack_name: str = Query(""),
     track: str = Query("")
@@ -13,6 +13,9 @@ async def root(
     current_day = datetime.now().strftime("%A")
     utc_time = utc_time + timedelta(hours=2)
     utc_time = utc_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    github_file_url = "https://github.com/wambaria/HNG_stageone/blob/main/main.py"
+    github_repo_url = "https://github.com/wambaria/HNG_stageone"
 
     response_data = {
         "slack_name": slack_name,
@@ -28,3 +31,4 @@ async def root(
 
 if __name__ == "__main__":
     import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000)
